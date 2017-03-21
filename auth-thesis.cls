@@ -117,7 +117,7 @@
                     \vspace{3mm}
                     \normalsize{του}\\
                     \vspace{3mm}
-                    \large{\textbf{ΟΡΦΕΑ ΑΝΤΩΝΙΟΥ}}
+                    \large{\textbf{ΒΑΣΙΛΗ ΜΠΟΥΝΤΡΗ}}
                 \end{center}
                 %
                 \vspace{5mm}
@@ -129,8 +129,8 @@
 
                 \begin{minipage}{15cm}
                 \begin{tabbing}
-                    \large \textbf{\supervisorname :} \=\@supervisor\\
-                    \>Αναπληρωτής Καθηγητής Α.Π.Θ.
+                    \large \textbf{\supervisorname :} \=\@supervisor, Επίκουρος Καθηγητής Α.Π.Θ.\\
+                    \>Κυριάκος Χατζηδημητρίου, Μεταδιδάκτορας Α.Π.Θ.
                 \end{tabbing}
                 \end{minipage}
                 \vspace{1mm}
@@ -148,7 +148,7 @@
             \begin{center}
                 %\Large \textsc{{\bfseries \@translator}}\\[12pt]
                 \textsc{\@lab}\\
-                Θεσσαλονίκη, Μάρτιος 2017
+                Θεσσαλονίκη, Ιούνιος 2017
             \end{center}
             %
             \cleardoublepage
@@ -260,7 +260,7 @@
 \newcommand{\draftname}{Προσχέδιο}
 \newcommand{\prefacename}{Πρόλογος}
 \newcommand{\acknowledgementsname}{Ευχαριστίες}
-\newcommand{\supervisorname}{Επιβλέπων}
+\newcommand{\supervisorname}{Επιβλέποντες}
 \newcommand{\pagesname}{Σελίδες}
 \newcommand{\urlname}{\en{URL}}
 \newcommand{\ftpname}{\en{FTP}}
@@ -268,8 +268,8 @@
 \translator{Διπλωματική Εργασία}
 \institution{Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης}
 \department{Τμήμα Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών}
-\division{Τομέας Τηλεπικοινωνιών}
-\lab{} %was: \lab{Μονάδα Ηλεκτρομαγνητικών Εφαρμογών και Υπολογισμών}
+\division{Τομέας Ηλεκτρονικής και Υπολογιστών}
+\lab{Εργαστήριο Ευφυών Συστημάτων και Τεχνολογίας Λογισμικού \en{(ISSEL)}} %was: \lab{Μονάδα Ηλεκτρομαγνητικών Εφαρμογών και Υπολογισμών}
 \other{} %was \other{Ζωγράφου 157 73, Αθήνα}
 %\supervisor{Νικόλαος Κανταρτζής}
 
