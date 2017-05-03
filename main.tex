@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,english,greek,twoside]{auth-thesis}
+\documentclass[11pt,a4paper,english,greek,twoside,fleqn]{auth-thesis}
 \usepackage{epsfig}
 %\usepackage[english,greek]{babel}
 %\usepackage[T1]{fontenc}
@@ -9,7 +9,7 @@
 \usepackage{afterpage}
 \usepackage{algorithmic}
 \usepackage{algorithm}
-\usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{array}
@@ -60,8 +60,6 @@
 % typeset source code
 \newcommand{\src}[1]{{\tt\en{#1}}}
 
-
-
 % typeset a backslash
 \newcommand{\bkslash}{\en{\symbol{92}}}
 
@@ -98,7 +96,6 @@
 \newcommand{\To}{\Longrightarrow}
 \newcommand{\xml}{\en{XML}}
 
-
 \selectlanguage{greek}
 \hyphenation{τμή-μα Επο-μέ-νως}
 
@@ -120,7 +117,7 @@
 \pagenumbering{roman}
 \mainmatter
 \include{chapters/abstract} % abstract and acknowledgements
-%TODO write abstract
+
 \tableofcontents
 \listoffigures
 \listoftables
@@ -130,10 +127,13 @@
 \include{chapters/chapter04}
 \include{chapters/chapter05}
 
-% References imported from `references.bib'. 
+% References imported from `rnn2source.bib'. 
 %IMPORTANT: Manually modify `main.bbl' by adding \selectlanguage{english} (TOP) and \selectlanguage{english} (BOTTOM) in order to correctly display Latin and Greek characters in the final text.
-%TODO create .tex file for bibliography, in order to have greek heading in the bibliography page
-\bibliography{references}
+\nocite{*}
+
+\bibliographystyle{hellas}
+
+\bibliography{rnn2source}
 
 
 \appendix
@@ -141,7 +141,6 @@
 \include{chapters/appendix_glossary}
 \include{chapters/appendix_CSTmodel}
 \include{chapters/appendix_MATLABcode}
-
 
 \backmatter
 \printindex
