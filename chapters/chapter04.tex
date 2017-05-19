@@ -21,11 +21,25 @@
 Δέχεται ακολουθιές χαρακτήρων κώδικα και εξάγει προβλέψεις για τα επόμενα στοιχεία τους.
 Η προβλέψεις του char-rnn έχουν μία διάσταση ίση με τον αριθμό διαφορετικών χαρακτήρων που υπάρχουν στο εκάστοτε σετ δεδομένων.   
 
+\begin{figure}[tph]
+	\includegraphics[width=\textwidth, keepaspectratio]{images/char-rnn.png}
+	\centering 
+	\caption{Το μοντέλο char-rnn.}
+	\label{fig:char-rnn}
+\end{figure}
+
 \subsection{\en{Model labeled-char-rnn}}
 
 Το δεύτερο μοντέλο είναι επίσης ένα αναδραστικό νευρωνικό δίκτυο με 3 κρυμμένα επίπεδα στοιχείων \en{LSTM}. 
 Εκτός απο ακολουθίες χαρακτήρων, το μοντέλο αυτό δέχεται και πληροφορία για το είδος του χαρακτήρα. 
 Αντίστοιχα οι έξοδοί του, εκτός απο προβλέψεις για τον χαρακτήρα, περιέχουν και προβλέψεις για το είδος του χαρακτήρα.
+
+\begin{figure}[tph]
+	\includegraphics[width=\textwidth, keepaspectratio]{images/l-char-rnn.png}
+	\centering 
+	\caption{Το μοντέλο labeled-char-rnn.}
+	\label{fig:l-char-rnn}
+\end{figure}
 
 \section{Τα σετ δεδομένων}
 
