@@ -31,7 +31,7 @@
 
 Το δεύτερο μοντέλο είναι επίσης ένα αναδραστικό νευρωνικό δίκτυο με 3 κρυμμένα επίπεδα στοιχείων \en{LSTM}. 
 Εκτός απο ακολουθίες χαρακτήρων, το μοντέλο αυτό δέχεται και πληροφορία για το είδος του χαρακτήρα. 
-Αντίστοιχα οι έξοδοί του, εκτός απο προβλέψεις για τον χαρακτήρα, περιέχουν και προβλέψεις για το είδος του χαρακτήρα. Με τον τρόπο αυτό θα εξετάσουμε κατά πόσο τα \en{RNN} μπορούν να εκμεταλλευτούν \en{a priori} γνώσεις για τον κώδικα. 
+Αντίστοιχα οι έξοδοί του, εκτός απο προβλέψεις για τον χαρακτήρα, περιέχουν και προβλέψεις για το είδος του χαρακτήρα. Με τον τρόπο αυτό θα εξετάσουμε κατά πόσο τα \en{RNN} μπορούν να εκμεταλλευτούν \en{a priori} γνώσεις για τον κώδικα. Σημειώνεται πως η συνάρτηση επιδόσεων αυτού το μοντέλου είνα γραμμικός συνδυασμός των επιμέρους επιδόσεων πρόβλεψης χαρακτήρα και είδους χαρακτήρα.
 
 \begin{figure}[h]
 	\includegraphics[width=\textwidth, trim = 4 4 4 4, clip, keepaspectratio]{images/l-char-rnn.pdf}
@@ -66,18 +66,17 @@
 
 \begin{table}[]
 \centering
+\label{label-example}
+\caption{Παράδειγμα αντιστοιχείας χαρακτήρων με το είδος τους σε μια ακολουθία}
 \begin{tabularx}{\textwidth}{|l|XXXXXXXXXXXXXXXXXXXXX|}
 \hline
 \en{String 1} & \en{v} & \en{a} & \en{r} &   & \en{a} & = & 1 & \en{;} & \en{f} & \en{u} & \en{n} & \en{c} & \en{t} & \en{i} & \en{o} & \en{n} &   & \en{f} & \en{(} & \en{A} & \en{)} \\ \hline
 \en{Label 1}  & \en{K} & \en{K} & \en{K} & \en{P} & \en{I} & \en{O} & \en{N} & \en{P} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{P} & \en{I} & \en{P} & \en{I} & \en{P} \\ \hline
-\\
 \hline
-\en{String 2} & \en{} & \en{r} & \en{e} & \en{t}  & \en{u} & \en{r} & \en{n} & \en{ } & \en{} & \en{u} & \en{n} & \en{c} & \en{t} & \en{i} & \en{o} & \en{n} &   & \en{f} & \en{(} & \en{A} & \en{)} \\ \hline
-\en{Label 1}  & \en{K} & \en{K} & \en{K} & \en{P} & \en{I} & \en{O} & \en{N} & \en{P} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{P} & \en{I} & \en{P} & \en{I} & \en{P} \\ \hline
+\en{String 2} & \{ & \en{r} & \en{e} & \en{t}  & \en{u} & \en{r} & \en{n} &  & < & \en{o} & \en{k} &  > & \en{;} & \} & \en{c} & = & \en{f} & \en{(} & \en{1} &\en{0} & \en{)} \\ \hline
+\en{Label 2}  & \en{P} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{K} & \en{P} & \en{S} & \en{S} & \en{S} & \en{S} & \en{P} & \en{P} & \en{I} & \en{O} & \en{I} & \en{P} & \en{N} & \en{N} & \en{P} \\ \hline
 \end{tabularx}
 \end{table}
-
-%TODO Add examples from draft report december
 
 \section{\en{Training}}
 
