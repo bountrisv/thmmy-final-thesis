@@ -15,12 +15,14 @@
 \usepackage{array}
 \usepackage{babel}
 \usepackage{caption}
+\usepackage{color}
 \usepackage{datetime}
 \usepackage{epstopdf}
 \usepackage{graphicx}
 \usepackage{indentfirst}
 \usepackage{index}
 \usepackage{latexsym}
+\usepackage{listings}
 \usepackage{siunitx}
 \usepackage{subcaption}
 \usepackage{tabularx}
@@ -35,7 +37,6 @@
 \newindex{en}{edx}{end}{Ευρετήριο αγγλικών όρων}
 %\makeindex
 
-
 % Page definitions
 %\setlength{\textheight}{23cm} \setlength{\textwidth}{15.5cm}
 %\setlength{\oddsidemargin}{0.2cm}
@@ -44,6 +45,9 @@
 
 % 1.5 spacing
 \renewcommand{\baselinestretch}{1.2}
+
+% proper listings caption
+\renewcommand{\lstlistingname}{\tg{Κώδικας}}
 
 \newcommand\blankpage{%
     \null
@@ -97,15 +101,50 @@
 \newcommand{\To}{\Longrightarrow}
 \newcommand{\xml}{\en{XML}}
 
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
 \selectlanguage{greek}
 \hyphenation{τμή-μα Επο-μέ-νως}
 
 \title{Αυτόματη Συγγραφή Κώδικα με Αναδραστικά Νευρωνικά Δίκτυα \en{(Source Code Generation with Recurrent Neural Networks)}}
 \author{Βασίλης Μπούντρης}
 \supervisor{Ανδρέας Συμεωνίδης}
-\TRnumber{ΟΕΣΤΛ-ΔΙΠΛ-2017-06} %TODO update
-\epitropiF{Καθηγητής 2} %TODO update
-\epitropiS{Καθηγητής 3} %TODO update
+%\TRnumber{ΟΕΣΤΛ-ΔΙΠΛ-2017-06} %TODO update
+%\epitropiF{Καθηγητής 2} %TODO update
+%\epitropiS{Καθηγητής 3} %TODO update
 
 
 \begin{document}
@@ -134,10 +173,8 @@
 \bibliographystyle{hellas}
 \bibliography{rnn2source}
 
-
 \appendix
 \include{chapters/appendix_glossary}
-
 \backmatter
 \printindex
 
