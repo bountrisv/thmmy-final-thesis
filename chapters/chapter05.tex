@@ -94,14 +94,14 @@ To σετ δεδομένων αυτό αποτελείται από τα 100 π�
 
 Οι αποφάσεις των υπερπαραμέτρων βασίζονται στις παρατηρήσεις μας από τα προηγούμενα πειράματα. Έτσι, κρατάμε ίδιο το μέγεθος παρτίδας, τον ρυθμό εκμάθησης και το μήκος ακολουθίας.
 Το σετ εκπαίδευσης έχει μικρότερο μέγεθος από το προηγούμενο πείραμα και από τις πρώτες δοκιμές παρατηρούμε σημαντικό \en{overfitting}.
-Προς την κατεύθυνση καλύτερης γενίκευσης των συμπερασμάτων του συστήματος, αρχικά μικραίνουμε το δίκτυο θέτοντας το μέγεθος \en{LSTM} se 700, κίνηση η οποία μειώνει σημαντικά τις εκπαιδεύσιμες παραμέτρους του συστήματος.
+Προς την κατεύθυνση καλύτερης γενίκευσης των συμπερασμάτων του συστήματος, αρχικά μικραίνουμε το δίκτυο θέτοντας το μέγεθος \en{LSTM} se 512, κίνηση η οποία μειώνει σημαντικά τις εκπαιδεύσιμες παραμέτρους του συστήματος.
 Έπειτα αυξάνουμε την πιθανότητα \en{dropout} σε 30\% και 40\% που αποτέλεσμα έχει την αργήτερη εκπαίδευση του αναδραστικού νευρωνικού δικτύου.
 Για να αποζημιώσουμε την τελευταία μας επιλογή αυξάνουμε τις εκπαιδευτικές εποχές του μοντέλου σε 60 και 80 αντίστοιχα.
 Οι εκπαιδευτικές επιλογές συνοψίζονται στον πίνακα \ref{hyper2}.
 
 \begin{table}[]
 \centering
-\begin{tabularx}{\textwidth}{|X|X|X|}%TODO Check these values
+\begin{tabularx}{\textwidth}{|X|X|X|}
 \hline
                     & \en{char-rnn} & \en{labeled-char-rnn} \\
 \hline
@@ -111,7 +111,7 @@ To σετ δεδομένων αυτό αποτελείται από τα 100 π�
 \hline
 \en{\#} Εποχών       & 60             & 80                  \\
 \hline
-Μέγεθος \en{LSTM}  & 700            & 700                    \\
+Μέγεθος \en{LSTM}  & 512            & 512                    \\
 \hline
 Μήκος Ακολουθίας    & 100             & 100                     \\
 \hline
@@ -224,4 +224,148 @@ To σετ δεδομένων αυτό αποτελείται από τα 100 π�
 
 \subsection{\en{Top 200 npm Projects} Παραγώμενος κώδικας}
 
-Ακολουθούμε ανάλυση όμοια με την προγούμενη υποενότητα. Το \en{project} αρχικοποίησης που χρησιμοποιείται ειναι το: 
+Ακολουθούμε ανάλυση όμοια με την προγούμενη υποενότητα.
+Το \en{project} αρχικοποίησης που χρησιμοποιείται ειναι το \en{lodash}, μια βιβλιοθήκη της \en{javascript} που διευκολύνει τη διαχείριση διανυσμάτων, αντικειμένων, αλφαριθμητικών και τη διαδικασία του \en{unit testing}. Ο κώδικας 5.4 είναι του ιδίου \en{project} και οι κώδικες 5.5, 5.6 είναι έπιλεγμένοι κώδικες των παραγώμενων μοντέλων. 
+\pagebreak
+
+\selectlanguage{english}
+\lstinputlisting[language=JavaScript, caption={\tg{Δείγμα κώδικα απο το }\en{lodash}}]{code/lodash.js}
+\selectlanguage{greek}
+
+\selectlanguage{english}
+\lstinputlisting[language=JavaScript, caption={\tg{Δείγμα κώδικα απο το }\en{char-rnn}}]{code/charnpm.js}
+\selectlanguage{greek}
+
+\pagebreak
+
+\selectlanguage{english}
+\lstinputlisting[language=JavaScript, caption={\tg{Δείγμα κώδικα απο το }\en{labeled-char-rnn}}]{code/npmLabel.js}
+\selectlanguage{greek}
+
+Στα σχήματα \ref{static-npm-char} και \ref{static-npm-labeled} μπορούμε να συγκρίνουμε τις επιδόσεις των δύο μοντέλων.
+To \en{dataset} αυτό περιέχει κατά μέσο όρο μικρότερα αρχεία οπότε και τα μεγέθη των παραγώμενων αρχείων είναι μικρότερα (113 - 47 γραμμές). 
+Και πάλι, το \en{labeled-char-rnn} μοντέλο κλείνει με μεγαλύτερη συνέπεια τα αρχεία του.
+Τα ποσοστά ολοκλήρωσης της συντακτικής ανάλυσης και οι μέσοι όροι λαθών δείχνουν βελτίωση σε σχέση με το προηγούμενο σετ δεδομένων, ενώ τα παρόντα μοντέλα χρησιμοποιούν σημαντικά λιγότερες παραμέτρους.
+Ωστόσο, και σε αυτό το πείραμα το \en{labeled-char-rnn} μοντέλο αδυνατεί να χρησιμοποιήσει την παραπάνω πληροφορία που του δίνεται. Τα μοτίβα των συνηθισμένων λαθών επαναλαμβάνονται (\ref{MCE1-npmchar} - \ref{MCE2-npmlabeled})
+
+\begin{figure}
+	\caption{Στατική ανάλυση κώδικα για τα αποτελέσματα του \en{char-rnn} μοντέλου}
+	\label{static-npm-char}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/jshint-npmchar.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Στατική ανάλυση κώδικα για τα αποτελέσματα του \en{labeled-char-rnn} μοντέλου}
+	\label{static-npm-labeled}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/jshint-npmlabeled.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Συνηθέστερο λάθος των αρχείων του \en{char-rnn}}
+	\label{MCE1-npmchar}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE-npmchar.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Δεύτερο συνηθέστερο λάθος των αρχείων του \en{char-rnn}}
+	\label{MCE2-npmchar}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE2-npmchar.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Συνηθέστερο λάθος των αρχείων του \en{labeled-char-rnn}}
+	\label{MCE1-npmlabeled}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE-npmlabeled.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Δεύτερο συνηθέστερο λάθος των αρχείων του \en{labeled-char-rnn}}
+	\label{MCE2-npmlabeled}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE2-npmlabeled.png}
+\end{figure}
+
+\pagebreak 
+
+\subsection{\en{Top 100 Github Javascript Projects} Παραγώμενος κώδικας με αλλοιωμένη δειγματοληψία}
+
+Η δυνατότητα παραγωγής κώδικα οφείλεται, εν μέρει, στην προσθήκη της δειγματοληψίας της εξόδου του συστήματος μας. Με σκοπό τη διερεύνηση της λειτουργίας των δύο μοντέλων, θα αλλοιώσουμε την κατανομή πιθανότητας που προτείνει το μοντέλο, ώστε να είναι πιο σίγουρο για τις προβλέψεις του. Χρησιμοποιούμε την συνάρτηση \en{Softmax Temperature} και επιλεγμένη τιμή για τη θερμοκρασία  0.85. Επιλέγουμε τα μοντέλα που εκπαιδεύτηκαν στο \en{Top 100 Github js dataset} και τον ίδιο κώδικα αρχικοποίησης που χρησιμοποίησαμε παραπάνω. Οι κώδικες 5.7, 5.8 περιέχουν αρχεία που παρήχθησαν από τα 2 μοντέλα. Στο κόστος της ποικιλίας του παραγώμενου κώδικα, τα μοντέλα κάνουν πιο <<συνηθισμένες>> επιλογές.   
+
+\selectlanguage{english}
+\lstinputlisting[language=JavaScript, caption={\tg{Δείγμα κώδικα απο το }\en{char-rnn}\tg{ με αλλοιωμένη δειγματοληψία}}]{code/temp-char.js}
+\selectlanguage{greek}
+
+\pagebreak
+
+\selectlanguage{english}
+\lstinputlisting[language=JavaScript, caption={\tg{Δείγμα κώδικα απο το }\en{labeled-char-rnn}\tg{ με αλλοιωμένη δειγματοληψία}}]{code/temp-labeled-char.js}
+\selectlanguage{greek}
+
+Στις εικόνες \ref{static-temp-char} - \ref{MCE2-temp-labeled} παρατίθενται τα αποτελέσματα της ανάλυσης.
+Το μέσο μήκος των παραγώμενων αρχείων ανεβαίνει σημαντικά σε σχέση με τις προηγούμενες προσεγγίσεις (218 - 132 γραμμες).
+Όπως και στα προηγούμενα αποτελέσματα, το μοντέλο \en{labeled-char-rnn} κλείνει με μεγαλύτερη συνέπεια τα αρχεία του, αλλά τα παραγώμενα αρχεία ολοκληρώνουν σε μικρότερο ποσοστό τον συντακτικό έλεγχο επιτυχημένα.
+Ενδιαφέρουσα είναι η εμφάνιση του λάθους \en{'Object Already Defined'} στα πιο συνηθισμένα λάθη.
+Πράγματι, τα αρχεία που παράγονται απο τα μοντέλα, τα οποία έχουν μεγαλύτερη πεποίθηση για τις προβλέψεις τους, τείνουν να επαναλαμβάνουν διάφορες δομές και συνεπώς λάθη.
+
+\begin{figure}
+	\caption{Στατική ανάλυση κώδικα για τα αποτελέσματα του \en{char-rnn} μοντέλου}
+	\label{static-temp-char}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/temp-char.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Στατική ανάλυση κώδικα για τα αποτελέσματα του \en{labeled-char-rnn} μοντέλου}
+	\label{static-temp-labeled}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/temp-labeled.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Συνηθέστερο λάθος των αρχείων του \en{char-rnn}}
+	\label{MCE-temp-char}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE-temp-char.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Δεύτερο συνηθέστερο λάθος των αρχείων του \en{char-rnn}}
+	\label{MCE2-temp-char}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE2-temp-char.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Συνηθέστερο λάθος των αρχείων του \en{labeled-char-rnn}}
+	\label{MCE2-temp-labeled}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE-temp-labeled.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Δεύτερο συνηθέστερο λάθος των αρχείων του \en{labeled-char-rnn}}
+	\label{MCE2-temp-labeled}
+	\includegraphics[width=\textwidth, keepaspectratio]{images/MCE2-temp-labeled.png}
+\end{figure}
+
+\subsection{Σχόλια περί σύγκρισης}
+
+Τα αποτελέσματα της παραγωγής κώδικα που δεν είναι πραγματικά λειτουργικός είναι δύσκολο να ποσοτικοποιηθουν. Η εγγενής δυσκολία ερμήνευσης της εκμάθησης των νευρωνικών δικτύων, δυσκολέυει παιρεταιρω την προσπάθεια αυτή. Με σκοπό την αποσαφήνιση των αποτελεσμάτων, δημιουργόυμε μία απλή μετρική ώστε να συγκρίνουμε τα 6 μοντέλα που δοκιμάστηκαν.
+
+\begin{equation}
+M = Mean\ \#\ Errors / (Mean\ \#\ Lines * Mean\ Syntax\ Analysis\ Completion\ \%)
+\end{equation}
+
+\begin{table}[!h]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+                    & \en{char-rnn} & \en{labeled-char-rnn} \\
+\hline
+\en{Github}       & 0.61             & 0.86                     \\
+\hline
+\en{NPM}       & 0.64             & 0.77                  \\
+\hline
+\en{Github Temperature}       & 0.38             & 0.52                  \\
+\hline
+\end{tabularx}
+\caption{Τιμές της Μετρικής $M$ για τα μοντέλα που δοκιμάστηκαν}
+\label{Mtable}
+\end{table}
+
+Απο τον πίνακα \ref{Mtable} μπορούμε να εξάγουμε 2 σημαντικά παρατηρήσεις (Μικρότερες τιμές του $M$ είναι προτιμότερες).
+Αρχικά, το μοντέλο \en{labeled-char-rnn} έχει σταθερά χειρότερες επιδόσεις στην παραγωγή ποιοτικού κώδικα, παρόλο που έχει στη διάθεση του παραπάνω πληροφορία για τον κώδικα και μάλιστα σημαντική. Έπειτα η στοχαστικότητα που εισάγεται για την παραγωγή κώδικα δυσκολεύει τα μοντέλα να γράψουν ορθά προγράμματα, για αυτό και όταν επιβάλλουμε στα συστήματα να εμπιστεύονται τις προβλέψεις τους, παιρνουμε καλύτερες τιμές για τη μετρική $M$.
