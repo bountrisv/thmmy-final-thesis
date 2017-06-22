@@ -148,6 +148,7 @@
             \begin{center}
                 %\Large \textsc{{\bfseries \@translator}}\\[12pt]
                 \textsc{\@lab}\\
+                \textsc{\@other}\\
                 Θεσσαλονίκη, Ιούνιος 2017
             \end{center}
             %
@@ -256,7 +257,7 @@
 \newcommand{\keywordsname}{Λέξεις Κλειδιά}
 \newcommand{\keywordsnameeng}{\en{Keywords}}
 \newcommand{\abstractname}{Περίληψη}
-\newcommand{\abstractnameeng}{\en{Abstract}}
+\newcommand{\abstractnameeng}{\en{Towards Source Code Generation with Recurrent Neural Networks}}
 \newcommand{\draftname}{Προσχέδιο}
 \newcommand{\prefacename}{Πρόλογος}
 \newcommand{\acknowledgementsname}{Ευχαριστίες}
@@ -269,9 +270,9 @@
 \institution{Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης}
 \department{Τμήμα Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών}
 \division{Τομέας Ηλεκτρονικής και Υπολογιστών}
-\lab{Εργαστήριο Ευφυών Συστημάτων και Τεχνολογίας Λογισμικού \en{(ISSEL)}} %was: \lab{Μονάδα Ηλεκτρομαγνητικών Εφαρμογών και Υπολογισμών}
-\other{} %was \other{Ζωγράφου 157 73, Αθήνα}
-%\supervisor{Νικόλαος Κανταρτζής}
+\lab{Εργαστήριο Επεξεργασίας Πληροφοριών και Υπολογισμών}
+\other{Ομάδα Ευφυών Συστημάτων και Τεχνολογίας Λογισμικού}
+
 
 \mysig{
 \vspace{15cm}
@@ -443,7 +444,7 @@
 }
 \def\abstracteng{
   \chapter*{\abstractnameeng\@mkboth{\abstractnameeng}{\abstractnameeng}}
-  \addcontentsline{toc}{chapter}{\abstractnameeng}
+  \addcontentsline{toc}{chapter}{\en{Abstract}}
 }
 \def\endabstract{\par\vfil\null\endtitlepage}
 

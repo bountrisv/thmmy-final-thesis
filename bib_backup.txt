@@ -1,0 +1,112 @@
+\begin{thebibliography}{10}
+\selectlanguage{english}
+\bibitem{Bahdanau2014}
+D.~Bahdanau, K.~Cho, and Y.~Bengio.
+\newblock {Neural Machine Translation by Jointly Learning to Align and
+  Translate}.
+\newblock {\em ICLR}, 2014.
+
+\bibitem{Bergstra2012}
+J.~Bergstra and Y.~Bengio.
+\newblock {Random Search for Hyper-Parameter Optimization}.
+\newblock {\em Journal of Machine Learning Research}, 2012.
+
+\bibitem{Biermann1985}
+A.~W. Biermann.
+\newblock {Automatic programming : A tutorial on formal methodologies}.
+\newblock {\em Journal of Symbolic Computation}, 1985.
+
+\bibitem{Goodfellow2014}
+I.~Goodfellow, J.~Pouget-Abadie, M.~Mirza, D.~Warde-Farley, S.~Ozair,
+  A.~Courville, and Y.~Bengio.
+\newblock {Generative Adversarial Nets}.
+\newblock {\em NIPS}, 2014.
+
+\bibitem{Graves2013}
+A.~Graves.
+\newblock {Generating Sequences with Recurrent Neural Networks}.
+\newblock {\em Technical Reports}, 2013.
+
+\bibitem{Hochreiter1997}
+S.~Hochreiter and J.~J. Schmidhuber.
+\newblock {Long short-term memory}.
+\newblock {\em Neural Computation}, 1997.
+
+\bibitem{Joulin2015}
+A.~Joulin and T.~Mikolov.
+\newblock {Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets}.
+\newblock {\em arXiv}, 2015.
+
+\bibitem{LeCun2015}
+Y.~LeCun, Y.~Bengio, and G.~Hinton.
+\newblock {Deep learning}.
+\newblock {\em Nature}, 2015.
+
+\bibitem{Liu2016}
+P.~Liu, X.~Qiu, and X.~Huang.
+\newblock {Recurrent Neural Network for Text Classification}.
+\newblock {\em arXiv}, 2016.
+
+\bibitem{Murali2017}
+V.~Murali, S.~Chaudhuri, and C.~Jermaine.
+\newblock {Bayesian Sketch Learning for Program Synthesis}.
+\newblock {\em arXiv}, 2017.
+
+\bibitem{Parisotto2017}
+E.~Parisotto, A.-R. Mohamed, R.~Singh, L.~Li, D.~Zhou, and P.~Kohli.
+\newblock {Neuro-Symbolic Program Synthesis}.
+\newblock {\em arXiv}, 2017.
+
+\bibitem{Parnas1985}
+D.~L. Parnas.
+\newblock {Software aspects of strategic defense systems}.
+\newblock {\em ACM SIGSOFT Software Engineering Notes}, 1985.
+
+\bibitem{Pascanu2012}
+R.~Pascanu, T.~Mikolov, and Y.~Bengio.
+\newblock {On the difficulty of training Recurrent Neural Networks}.
+\newblock {\em arXiv}, 2012.
+
+\bibitem{Schmidt2006}
+D.~C. Schmidt.
+\newblock {Model-Driven Engineering}.
+\newblock {\em IEEE Computer}, 2006.
+
+\bibitem{Srivastava2014}
+N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov.
+\newblock {Dropout: A Simple Way to Prevent Neural Networks from Overfitting}.
+\newblock {\em Journal of Machine Learning Research}, 2014.
+
+\bibitem{Sukhbaatar2015}
+S.~Sukhbaatar, A.~Szlam, J.~Weston, and R.~Fergus.
+\newblock {End-To-End Memory Networks}.
+\newblock {\em NIPS}, 2015.
+
+\bibitem{SutskeverThesis}
+I.~Sutskever.
+\newblock {Training Recurrent neural Networks}.
+\newblock {\em PhD thesis}, 2013.
+
+\bibitem{Martens2011}
+I.~Sutskever, J.~Martens, and G.~Hinton.
+\newblock {Generating Text with Recurrent Neural Networks}.
+\newblock {\em ICML}, 2011.
+
+\bibitem{Sutskever}
+I.~Sutskever, O.~Vinyals, and Q.~V. Le.
+\newblock {Sequence to sequence learning with neural networks}.
+\newblock {\em NIPS}, 2014.
+
+\bibitem{Tai2015}
+K.~S. Tai, R.~Socher, and C.~D. Manning.
+\newblock {Improved Semantic Representations From Tree-Structured Long
+  Short-Term Memory Networks}.
+\newblock {\em ACL}, 2015.
+
+\bibitem{Yin2017}
+P.~Yin and G.~Neubig.
+\newblock {A Syntactic Neural Model for General-Purpose Code Generation}.
+\newblock {\em arXiv}, 2017.
+
+\selectlanguage{greek}
+\end{thebibliography}
